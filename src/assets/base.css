@@ -1,0 +1,72 @@
+/*eslint-disable*/
+
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --white: #ffffff;
+
+  --grey: #f7f8fd;
+  --dark-grey: #f2f4ff;
+
+  --orange: #f49f85;
+
+  --blue: #4661e6;
+  --very-dark-blue: #373d68;
+  --dark-blue: #3a4374;
+  --grey-blue: #647196;
+  --light-blue: #62bcfa;
+
+  --lila: #ad1fea;
+}
+
+/* css reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Jost', sans-serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
