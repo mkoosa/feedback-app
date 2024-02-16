@@ -70,3 +70,9 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* common styles */
+
+.indent {
+  padding-inline: 2rem;
+}

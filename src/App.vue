@@ -1,6 +1,9 @@
-<script setup lang="ts"></script>
-
 <template>
-  <p>App</p>
-  <h1>ala</h1>
+  <MainComponent />
 </template>
+
+<script setup lang="ts">
+import MainComponent from './components/View/MainComponent.vue';
+</script>
+
+<style scoped></style>
