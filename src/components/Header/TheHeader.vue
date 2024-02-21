@@ -1,17 +1,20 @@
 <template>
   <header class="header indent">
     <HeaderHeadings />
-    <nav class="navigation">
-      <HamburgerNav />
-    </nav>
-    <TheCockpit />
+    <HamburgerNav @@toggle-nav="closeOpen" :is-open-nav="isOpenNav" />
+    <TheCockpit :is-open-nav="isOpenNav" />
   </header>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 import HeaderHeadings from './HeaderHeadings.vue';
 import HamburgerNav from './HamburgerNav.vue';
-import TheCockpit from '@/components/cockpit/TheCockpit.vue';
+import TheCockpit from '@/components/Cockpit/TheCockpit.vue';
+
+const isOpenNav = ref(false);
+const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
 </script>
 
 <style scoped>
@@ -26,5 +29,29 @@ import TheCockpit from '@/components/cockpit/TheCockpit.vue';
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+
+@media only screen and (min-width: 769px) {
+  .header {
+    margin-top: 3em;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    background-image: none;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1.5rem;
+    height: auto;
+    background: var(--grey);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .header {
+    padding-inline: 0;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
 }
 </style>

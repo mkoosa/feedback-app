@@ -27,4 +27,35 @@ const headingText = ref('Feedback Board');
   font-weight: 600;
   opacity: 1;
 }
+
+@media only screen and (min-width: 769px) {
+  .header__headings {
+    padding: 0 0 2.5rem 2.5rem;
+    background-image: url('../../assets/shared/header/tablet/background-header.png');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: left;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .heading--main {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .header__headings {
+    background-image: url('../../assets/shared/header/desktop/background-header.png');
+    height: 15rem;
+    width: 100%;
+  }
+}
 </style>

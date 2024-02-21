@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleNav" class="navigation__hamburger">
+  <div @click="eventHandler" class="navigation__hamburger">
     <button
       :class="isOpenNav ? 'is-active' : ''"
       class="hamburger hamburger--collapse"
@@ -13,12 +13,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+// props
+defineProps<{
+  isOpenNav: boolean;
+}>();
 
-const isOpenNav = ref(false);
-const toggleNav = () => {
-  isOpenNav.value = !isOpenNav.value;
-};
+//events
+const emit = defineEmits<{
+  (e: '@toggleNav'): void;
+}>();
+
+const eventHandler = () => emit('@toggleNav');
 </script>
 
 <style scoped>
@@ -126,5 +131,11 @@ const toggleNav = () => {
   transition:
     top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
     transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media only screen and (min-width: 769px) {
+  .navigation__hamburger {
+    display: none;
+  }
 }
 </style>
