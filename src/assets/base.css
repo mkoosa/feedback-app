@@ -77,6 +77,13 @@ h6 {
   padding-inline: 2rem;
 }
 
+/* ant design */
+.ant-dropdown-menu-title-content {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
 @media only screen and (min-width: 769px) {
   .indent {
     padding-inline: 3.5rem;

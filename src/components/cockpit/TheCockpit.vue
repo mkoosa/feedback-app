@@ -17,8 +17,8 @@ defineProps<{
 <style scoped>
 .cockpit {
   padding: 0 2rem;
-  width: 75%;
-  max-width: 45%;
+  width: 80%;
+  max-width: 33rem;
   height: 100vh;
   background: var(--grey);
   position: absolute;
