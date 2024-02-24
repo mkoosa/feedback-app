@@ -11,7 +11,7 @@ import { ref } from 'vue';
 
 import HeaderHeadings from './HeaderHeadings.vue';
 import HamburgerNav from './HamburgerNav.vue';
-import TheCockpit from '@/components/Cockpit/TheCockpit.vue';
+import TheCockpit from './Cockpit/TheCockpit.vue';
 
 const isOpenNav = ref(false);
 const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
@@ -33,7 +33,7 @@ const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
 
 @media only screen and (min-width: 769px) {
   .header {
-    margin-top: 3em;
+    margin-top: 3rem;
     padding-bottom: 0rem;
     padding-top: 0rem;
     background-image: none;
@@ -48,6 +48,7 @@ const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
 
 @media only screen and (min-width: 1025px) {
   .header {
+    margin-top: 3.5rem;
     padding-inline: 0;
     display: flex;
     justify-content: start;

@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 // import CockpitSubject from './CockpitSubject.vue';
-import TheSubject from '../Shared/TheSubject.vue';
+import TheSubject from '../../Shared/TheSubject.vue';
 
 import { ref } from 'vue';
 

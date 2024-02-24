@@ -58,4 +58,10 @@ defineEmits<{
 .dark-blue {
   background: var(--dark-blue);
 }
+
+@media only screen and (min-width: 769px) {
+  .btn {
+    padding: 0.9em 1.4em;
+  }
+}
 </style>

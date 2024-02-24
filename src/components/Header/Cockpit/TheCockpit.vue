@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import CockpitSubjects from './CockpitSubjects.vue';
-import RoadMap from '../Road/RoadMap.vue';
+import RoadMap from '../../Road/RoadMap.vue';
 
 defineProps<{
   isOpenNav: boolean;
@@ -40,6 +40,7 @@ defineProps<{
     position: initial;
     height: auto;
     width: initial;
+    max-width: 100%;
     top: initial;
     display: grid;
     grid-template-columns: 1fr 1fr;

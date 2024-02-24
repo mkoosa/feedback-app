@@ -6,8 +6,8 @@
       :elements="sortElements"
       :style="{ fontSize: '14px', padding: '8px', display: 'flex' }"
       :drop-down-class="'cockpit__dropdown dropdown'"
-      :dropdown-heading-class="'dropdown__heading'"
-      :list-class="'dropdown__list'"
+      :dropdown-heading-class="'cockpit__dropdown-heading'"
+      :list-class="'cockpit__dropdown-list'"
     />
   </div>
 </template>
@@ -26,6 +26,7 @@ const sortElements = ref<string[]>([
 
 <style scoped>
 .sort {
+  padding: 1rem 0;
   display: flex;
   align-items: center;
 }
@@ -35,13 +36,16 @@ const sortElements = ref<string[]>([
 }
 
 .sort__paragraph {
-  width: fit-content;
-}
-.sort__paragraph {
   font-size: 1.5rem;
 }
 .sort span {
   font-size: 1.5rem;
   margin: 0 0.5rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .sort__paragraph {
+    font-weight: 300;
+  }
 }
 </style>

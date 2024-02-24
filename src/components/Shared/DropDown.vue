@@ -48,30 +48,13 @@ const getElement = (element: string) => (listElement.value = element);
 .dropdown {
   position: relative;
 }
-.dropdown__heading {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
 
 .dropdown__header {
   display: flex;
 }
-
-.dropdown__heading {
-  font-weight: 500;
-  margin-right: 0.5rem;
-}
 .dropdown__icon {
   transform: translateY(0.5rem);
   font-size: 1.5rem;
-}
-.dropdown__list {
-  margin-top: 1rem;
-  width: 18rem;
-  position: absolute;
-  left: -2rem;
-  border-radius: 0.4rem;
-  overflow: hidden;
 }
 
 .list-element {
@@ -107,5 +90,32 @@ const getElement = (element: string) => (listElement.value = element);
 
 .ant-dropdown-menu-title-content {
   display: none;
+}
+
+.cockpit__dropdown-heading {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+/* from CockPitSort component */
+.cockpit__dropdown-list {
+  margin-top: 1rem;
+  width: 18rem;
+  position: absolute;
+  left: -2rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+@media only screen and (min-width: 769px) {
+  /* from CockPitSort component */
+  .cockpit__dropdown-heading {
+    margin-right: 0.8rem;
+  }
+  .cockpit__dropdown-list {
+    left: -6rem;
+    width: 20rem;
+  }
 }
 </style>
