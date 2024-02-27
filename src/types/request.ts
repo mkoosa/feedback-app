@@ -12,7 +12,7 @@ export default interface Request {
     upvotes: number | string;
     status: string;
     description: string;
-    comments: {
+    comments?: {
       id: number | string;
       content: string;
       user: {
@@ -20,6 +20,15 @@ export default interface Request {
         name: string;
         username: string;
       };
+      replies?: {
+        content: string;
+        replyingTo: string;
+        user: {
+          image: string;
+          name: string;
+          username: string;
+        };
+      }[];
     }[];
   }[];
 }

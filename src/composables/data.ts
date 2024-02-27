@@ -1,4 +1,6 @@
-const data = {
+import type Request from '@/types/request';
+
+const data: Request = {
   currentUser: {
     image: './assets/user-images/image-zena.jpg',
     name: 'Zena Kelley',
