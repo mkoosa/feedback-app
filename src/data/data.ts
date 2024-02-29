@@ -1,11 +1,6 @@
-import type Request from '@/types/request';
+import type { Subjects } from '@/types/request';
 
-const data: Request = {
-  currentUser: {
-    image: './assets/user-images/image-zena.jpg',
-    name: 'Zena Kelley',
-    username: 'velvetround'
-  },
+const data: Subjects = {
   requests: [
     {
       id: 1,
@@ -321,4 +316,4 @@ const data: Request = {
   ]
 };
 
-export default data;
+export { data };

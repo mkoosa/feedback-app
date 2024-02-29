@@ -1,18 +1,18 @@
 <template>
-  <div :class="subjectClass" class="subject">
-    <p class="text">{{ subject }}</p>
+  <div class="category">
+    <p class="text">{{ category }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-  subject: string;
-  subjectClass: string;
+  category: string;
 }>();
 </script>
 
 <style scoped>
-.subject {
+.category {
+  width: fit-content;
   margin: 0 1.5rem 2rem 0;
   display: flex;
   background: var(--dark-grey);

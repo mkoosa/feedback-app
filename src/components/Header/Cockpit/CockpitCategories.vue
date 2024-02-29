@@ -1,26 +1,26 @@
 <template>
-  <div role="list" class="cockpit__subjects">
-    <TheSubject
+  <div role="list" class="cockpit__categories">
+    <TheCategory
       role="listitem"
-      v-for="subject in subjects"
-      :key="subject"
-      :subject="subject"
-      subjectClass="cockpit__subject"
+      v-for="category in categories"
+      :key="category"
+      :category="category"
+      class="cockpit__category"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 // import CockpitSubject from './CockpitSubject.vue';
-import TheSubject from '../../Shared/TheSubject.vue';
 
 import { ref } from 'vue';
+import TheCategory from '@/components/Shared/TheCategory.vue';
 
-const subjects = ref<string[]>(['all', 'UI', 'UX', 'enhancement', 'bug', 'feature']);
+const categories = ref<string[]>(['all', 'UI', 'UX', 'enhancement', 'bug', 'feature']);
 </script>
 
 <style scoped>
-.cockpit__subjects {
+.cockpit__categories {
   margin: 2rem 0;
   padding: 2rem 2rem 1.5rem 2rem;
   background: var(--white);
@@ -31,14 +31,14 @@ const subjects = ref<string[]>(['all', 'UI', 'UX', 'enhancement', 'bug', 'featur
 }
 
 @media only screen and (min-width: 769px) {
-  .cockpit__subjects {
+  .cockpit__categories {
     margin: 0;
     border-radius: 1rem;
   }
 }
 
 @media only screen and (min-width: 1025px) {
-  .cockpit__subjects {
+  .cockpit__categories {
     margin: 1.4rem 0;
   }
 }

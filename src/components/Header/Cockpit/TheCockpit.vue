@@ -1,12 +1,12 @@
 <template>
   <div :class="isOpenNav ? 'isOpen' : 'cockpit'" class="cockpit">
-    <CockpitSubjects />
+    <CockpitCategories />
     <RoadMap />
   </div>
 </template>
 
 <script setup lang="ts">
-import CockpitSubjects from './CockpitSubjects.vue';
+import CockpitCategories from './CockpitCategories.vue';
 import RoadMap from '../../Road/RoadMap.vue';
 
 defineProps<{
