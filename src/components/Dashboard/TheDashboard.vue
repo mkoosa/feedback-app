@@ -11,10 +11,13 @@ import SubjectItems from './Subjects/SubjectItems.vue';
 </script>
 
 <style scoped>
+.dashboard {
+  background: var(--grey);
+}
 @media only screen and (min-width: 769px) {
   .dashboard {
     margin-top: 3.5rem;
-    padding-inline: 2rem;
+    background: var(--grey);
   }
 }
 @media only screen and (min-width: 1024px) {

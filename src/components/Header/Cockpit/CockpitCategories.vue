@@ -2,7 +2,7 @@
   <div role="list" class="cockpit__categories">
     <TheCategory
       role="listitem"
-      v-for="category in categories"
+      v-for="category in categories()"
       :key="category"
       :category="category"
       class="cockpit__category"
@@ -11,12 +11,10 @@
 </template>
 
 <script setup lang="ts">
-// import CockpitSubject from './CockpitSubject.vue';
-
-import { ref } from 'vue';
 import TheCategory from '@/components/Shared/TheCategory.vue';
+import useCategories from '@/composables/categories';
 
-const categories = ref<string[]>(['all', 'UI', 'UX', 'enhancement', 'bug', 'feature']);
+const { categories } = useCategories();
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard__cockpit cockpit indent">
+  <div class="dashboard__cockpit cockpit">
     <CockpitSuggestion />
     <CockpitSort />
     <div class="btn-wrapper">
@@ -22,6 +22,7 @@ const click = (): void => console.log('ok');
 .cockpit {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-inline: 2.5rem;
   color: var(--white);
   background: var(--dark-blue);
   display: flex;

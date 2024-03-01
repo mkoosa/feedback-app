@@ -1,5 +1,5 @@
 <template>
-  <header class="header indent">
+  <header class="header">
     <HeaderHeadings />
     <HamburgerNav @@toggle-nav="closeOpen" :is-open-nav="isOpenNav" />
     <TheCockpit :is-open-nav="isOpenNav" />
@@ -19,6 +19,7 @@ const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
 
 <style scoped>
 .header {
+  padding-inline: 2.5rem;
   height: 7.5rem;
   background-image: url('../../assets/shared/header/mobile/background-header.png');
   background-repeat: no-repeat;
@@ -36,6 +37,7 @@ const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
     margin-top: 3rem;
     padding-bottom: 0rem;
     padding-top: 0rem;
+    padding-inline: 0;
     background-image: none;
     display: flex;
     display: grid;

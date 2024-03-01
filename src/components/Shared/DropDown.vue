@@ -117,5 +117,12 @@ const getElement = (element: string) => (listElement.value = element);
     left: -6rem;
     width: 20rem;
   }
+
+  @media only screen and (min-width: 1201px) {
+    .cockpit__dropdown-list {
+      width: 25rem;
+      top: 2rem;
+    }
+  }
 }
 </style>

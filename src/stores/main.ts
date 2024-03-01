@@ -12,7 +12,7 @@ const useMainStore = defineStore('mainStore', () => {
 
   fetchRequest().then((data) => (subjects.value = data));
 
-  const GET_SUBJECTS = computed(() => subjects.value);
+  const GET_SUBJECTS = computed(() => subjects.value?.requests);
 
   return { fetchRequest, GET_SUBJECTS, subjects };
 });

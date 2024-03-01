@@ -26,6 +26,7 @@ defineProps<{
   top: 7.5rem;
   transition: all 0.22s;
   transform: translateX(100%);
+  z-index: 10;
 }
 
 .cockpit.isOpen {

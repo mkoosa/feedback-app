@@ -64,4 +64,14 @@ defineEmits<{
     padding: 0.9em 1.4em;
   }
 }
+@media only screen and (min-width: 1201px) {
+  .btn {
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn:hover {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+}
 </style>
