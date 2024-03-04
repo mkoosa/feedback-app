@@ -19,3 +19,4 @@ library.add(far);
 const app = createApp(App);
 
 app.use(Antd).use(pinia).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
+// useSubjectsStore();

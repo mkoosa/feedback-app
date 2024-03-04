@@ -2,6 +2,7 @@
   <div class="wrapper">
     <TheHeader />
     <main class="main">
+      <TheLoader />
       <TheDashboard />
     </main>
   </div>
@@ -10,9 +11,17 @@
 <script setup lang="ts">
 import TheHeader from '@/components/Header/TheHeader.vue';
 import TheDashboard from '../Dashboard/TheDashboard.vue';
+import TheLoader from '../Loader/TheLoader.vue';
 </script>
 
 <style scoped>
+.wrapper {
+  overflow-x: hidden;
+}
+.main {
+  position: relative;
+}
+
 @media only screen and (min-width: 769px) {
   .wrapper {
     margin-inline: auto;

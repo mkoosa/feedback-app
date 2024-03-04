@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia';
-import { computed, ref } from 'vue';
+import { acceptHMRUpdate, defineStore } from 'pinia';
+import { ref } from 'vue';
 
 import useResource from '@/composables/useResource';
 
@@ -12,9 +12,11 @@ const useMainStore = defineStore('mainStore', () => {
 
   fetchRequest().then((data) => (subjects.value = data));
 
-  const GET_SUBJECTS = computed(() => subjects.value?.requests);
-
-  return { fetchRequest, GET_SUBJECTS, subjects };
+  return { fetchRequest, subjects };
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useMainStore, import.meta.hot));
+}
 
 export default useMainStore;

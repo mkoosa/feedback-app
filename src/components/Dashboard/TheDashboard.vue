@@ -1,13 +1,15 @@
 <template>
   <div class="dashboard">
     <TheCockpit />
-    <SubjectItems />
+    <TheSubjects />
+    <SubjectsPagination />
   </div>
 </template>
 
 <script setup lang="ts">
 import TheCockpit from './Cockpit/TheCockpit.vue';
-import SubjectItems from './Subjects/SubjectItems.vue';
+import TheSubjects from './Subjects/TheSubjects.vue';
+import SubjectsPagination from './Subjects/SubjectsPagination.vue';
 </script>
 
 <style scoped>

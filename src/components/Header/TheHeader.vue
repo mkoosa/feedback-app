@@ -30,6 +30,7 @@ const closeOpen = () => (isOpenNav.value = !isOpenNav.value);
   align-items: center;
   justify-content: space-between;
   position: relative;
+  /* overflow: hidden; */
 }
 
 @media only screen and (min-width: 769px) {

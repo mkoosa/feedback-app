@@ -6,18 +6,17 @@
 
 <script setup lang="ts">
 import SubjectItem from './Subject/SubjectItem.vue';
-import useMainStore from '@/stores/main';
+
 import { computed } from 'vue';
+import useSubjectsStore from '@/stores/subjects';
 
-const mainStore = useMainStore();
+const subjectStore = useSubjectsStore();
 
-const items = computed(() => mainStore.GET_SUBJECTS);
+const items = computed(() => subjectStore.GET_SUBJECTS_ON_PAGE);
 </script>
 
 <style scoped>
 .dashboard__lists {
   margin: 3rem 0;
-
-  /* margin: 3rem 2rem; */
 }
 </style>
