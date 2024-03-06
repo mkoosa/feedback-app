@@ -7,7 +7,8 @@ import type { Subjects, Subject } from '@/types/request';
 const useSubjectsStore = defineStore('subjectsStore', () => {
   const mainStore = useMainStore();
   const subjects = ref<Subjects | null>(null);
-  const quantitySubjectsOnPage = 6;
+
+  const quantitySubjectsOnPage = ref(6);
   const subjectsOnPage = ref<Subject[] | undefined>([]);
 
   const objectsOnPage = (start: number, end: number) => {
@@ -16,12 +17,15 @@ const useSubjectsStore = defineStore('subjectsStore', () => {
 
   const GET_SUBJECTS = computed(() => {
     subjects.value = mainStore.subjects;
-    subjectsOnPage.value = subjects.value?.requests.slice(0, quantitySubjectsOnPage);
+    subjectsOnPage.value = subjects.value?.requests.slice(0, quantitySubjectsOnPage.value);
     return subjects.value?.requests;
   });
 
   const GET_SUBJECTS_QUANTITY = computed(() => subjects.value?.requests.length);
-  const GET_SUBJECTS_ON_PAGE = computed<Subject[] | undefined>(() => subjectsOnPage.value);
+  const GET_SUBJECTS_ON_PAGE = computed<Subject[] | undefined>(() => {
+    GET_SUBJECTS.value;
+    return subjectsOnPage.value;
+  });
 
   return {
     subjects,
@@ -29,7 +33,8 @@ const useSubjectsStore = defineStore('subjectsStore', () => {
     GET_SUBJECTS_QUANTITY,
     GET_SUBJECTS_ON_PAGE,
     objectsOnPage,
-    subjectsOnPage
+    subjectsOnPage,
+    quantitySubjectsOnPage
   };
 });
 

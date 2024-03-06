@@ -1,79 +1,112 @@
 <template>
-  <span class="loader"></span>
+  <div class="loader"></div>
 </template>
 
 <style scoped>
+/* HTML: <div class="loader"></div> */
 .loader {
-  position: absolute;
-  transform: rotateZ(45deg);
-  perspective: 1000px;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  color: #fff;
+  margin: 0 auto;
+  margin-top: 30vh;
+  width: 40px;
+  aspect-ratio: 1;
+  --c: linear-gradient(#373d68 0 0);
+  --r1: radial-gradient(farthest-side at bottom, #373d68 93%, #373d68);
+  --r2: radial-gradient(farthest-side at top, #373d68 93%, #373d68);
+  background: var(--c), var(--r1), var(--r2), var(--c), var(--r1), var(--r2), var(--c), var(--r1),
+    var(--r2);
+  background-repeat: no-repeat;
+  animation: l2 1s infinite alternate;
 }
-.loader:before,
-.loader:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
-}
-.loader:after {
-  color: #ff3d00;
-  transform: rotateY(70deg);
-  animation-delay: 0.4s;
-}
-
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotateZ(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotateZ(360deg);
-  }
-}
-
-@keyframes rotateccw {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
-}
-
-@keyframes spin {
+@keyframes l2 {
   0%,
-  100% {
-    box-shadow: 0.2em 0px 0 0px currentcolor;
-  }
-  12% {
-    box-shadow: 0.2em 0.2em 0 0 currentcolor;
-  }
   25% {
-    box-shadow: 0 0.2em 0 0px currentcolor;
-  }
-  37% {
-    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+    background-size:
+      8px 0,
+      8px 4px,
+      8px 4px,
+      8px 0,
+      8px 4px,
+      8px 4px,
+      8px 0,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 calc(50% - 2px),
+      0 calc(50% + 2px),
+      50% 50%,
+      50% calc(50% - 2px),
+      50% calc(50% + 2px),
+      100% 50%,
+      100% calc(50% - 2px),
+      100% calc(50% + 2px);
   }
   50% {
-    box-shadow: -0.2em 0 0 0 currentcolor;
-  }
-  62% {
-    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+    background-size:
+      8px 100%,
+      8px 4px,
+      8px 4px,
+      8px 0,
+      8px 4px,
+      8px 4px,
+      8px 0,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 calc(0% - 2px),
+      0 calc(100% + 2px),
+      50% 50%,
+      50% calc(50% - 2px),
+      50% calc(50% + 2px),
+      100% 50%,
+      100% calc(50% - 2px),
+      100% calc(50% + 2px);
   }
   75% {
-    box-shadow: 0px -0.2em 0 0 currentcolor;
+    background-size:
+      8px 100%,
+      8px 4px,
+      8px 4px,
+      8px 100%,
+      8px 4px,
+      8px 4px,
+      8px 0,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 calc(0% - 2px),
+      0 calc(100% + 2px),
+      50% 50%,
+      50% calc(0% - 2px),
+      50% calc(100% + 2px),
+      100% 50%,
+      100% calc(50% - 2px),
+      100% calc(50% + 2px);
   }
-  87% {
-    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  95%,
+  100% {
+    background-size:
+      8px 100%,
+      8px 4px,
+      8px 4px,
+      8px 100%,
+      8px 4px,
+      8px 4px,
+      8px 100%,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 calc(0% - 2px),
+      0 calc(100% + 2px),
+      50% 50%,
+      50% calc(0% - 2px),
+      50% calc(100% + 2px),
+      100% 50%,
+      100% calc(0% - 2px),
+      100% calc(100% + 2px);
   }
 }
 </style>

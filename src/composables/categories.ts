@@ -1,12 +1,12 @@
-import useMainStore from '@/stores/main';
+import useSubjectsStore from '@/stores/subjects';
 
 const useCategories = () => {
-  const mainStore = useMainStore();
+  const subjectStore = useSubjectsStore();
   const names = ['all', 'UI', 'UX', 'enhancement', 'bug', 'feature'];
   const presentCategories = () => {
     const names: any = [];
-    if (mainStore.GET_SUBJECTS !== undefined) {
-      mainStore.GET_SUBJECTS.map((item) => names.push(item.category));
+    if (subjectStore.GET_SUBJECTS !== undefined) {
+      subjectStore.GET_SUBJECTS.map((item) => names.push(item.category));
       console.log(names);
       return [...new Set(names)];
     }

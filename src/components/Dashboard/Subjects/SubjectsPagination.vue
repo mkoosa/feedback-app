@@ -14,11 +14,10 @@ import { ref, computed } from 'vue';
 const subjectStore = useSubjectsStore();
 const current = ref(1);
 const total = computed(() => subjectStore.GET_SUBJECTS_QUANTITY);
-const quantitySubjectsOnPage = 6;
 
 const displaySubjectsOnPage = () => {
-  let start = (current.value - 1) * quantitySubjectsOnPage;
-  let end = start + quantitySubjectsOnPage;
+  let start = (current.value - 1) * subjectStore.quantitySubjectsOnPage;
+  let end = start + subjectStore.quantitySubjectsOnPage;
   subjectStore.objectsOnPage(start, end);
 };
 </script>
