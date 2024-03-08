@@ -3,6 +3,7 @@
     <p class="sort__paragraph">{{ sortParagraph }}</p>
     <span>:</span>
     <DropDown
+      @@event-from-dropdown="filterElements"
       :elements="sortElements"
       :style="{ fontSize: '14px', padding: '8px', display: 'flex' }"
       :drop-down-class="'cockpit__dropdown dropdown'"
@@ -14,14 +15,19 @@
 
 <script setup lang="ts">
 import DropDown from '@/components/Shared/DropDown.vue';
+import useCategories from '@/composables/categories';
+
 import { ref } from 'vue';
 const sortParagraph = ref('sort by');
 const sortElements = ref<string[]>([
-  'most votes',
-  'least votes',
+  'most upvotes',
+  'least upvotes',
   'most comments',
   'least comments'
 ]);
+
+const { filterByChosenOption } = useCategories();
+const filterElements = (value: string) => filterByChosenOption(value);
 </script>
 
 <style scoped>

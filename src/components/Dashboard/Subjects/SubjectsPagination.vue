@@ -11,14 +11,16 @@
 import useSubjectsStore from '@/stores/subjects';
 import { ref, computed } from 'vue';
 
-const subjectStore = useSubjectsStore();
 const current = ref(1);
+const subjectStore = useSubjectsStore();
+
 const total = computed(() => subjectStore.GET_SUBJECTS_QUANTITY);
 
 const displaySubjectsOnPage = () => {
-  let start = (current.value - 1) * subjectStore.quantitySubjectsOnPage;
-  let end = start + subjectStore.quantitySubjectsOnPage;
-  subjectStore.objectsOnPage(start, end);
+  const firstSubjectOnPage = (current.value - 1) * subjectStore.quantitySubjectsOnPage;
+  const lastSubjectOnPage = firstSubjectOnPage + subjectStore.quantitySubjectsOnPage;
+  subjectStore.firstSubjectOnPage = firstSubjectOnPage;
+  subjectStore.lastSubjectOnPage = lastSubjectOnPage;
 };
 </script>
 

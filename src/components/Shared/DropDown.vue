@@ -12,9 +12,13 @@
           :key="index"
           :style="style"
         >
-          <a :class="index == 0 ? 'none' : ''" class="list-element" href="javascript:;">{{
-            element
-          }}</a>
+          <a
+            @click="eventHandler(element)"
+            :class="index == 0 ? 'none' : ''"
+            class="list-element"
+            href="javascript:;"
+            >{{ element }}</a
+          >
           <font-awesome-icon
             :class="listElement === element ? 'check' : ''"
             class="list-icon"
@@ -36,6 +40,14 @@ const props = defineProps<{
   dropdownHeadingClass: string;
   listClass: string;
 }>();
+
+const emit = defineEmits<{
+  (e: '@eventFromDropdown', entry: string): void;
+}>();
+
+const eventHandler = (value: string) => {
+  emit('@eventFromDropdown', value);
+};
 
 const { elements } = toRefs(props);
 const listElement = ref(elements.value[0]);

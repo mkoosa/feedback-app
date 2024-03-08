@@ -17,7 +17,6 @@ const useResource = () => {
         const subject = doc.data();
         subjects.push(subject as Subject);
       });
-      console.log(`output->`, data);
       return data;
     } catch (error) {
       console.log((error as Error).message);
